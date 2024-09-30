@@ -40,4 +40,10 @@ router.post('/:recipeId/edit', async (req, res) => {
     res.redirect('/');
 });
 
+router.get('/search', async (req, res) => {
+    const filter = req.query;
+    const recipes = await recipeService.getAll(filter).lean();
+    res.render('home', { isSearch: true, recipes, filter });
+})
+
 export const recipesController = router;

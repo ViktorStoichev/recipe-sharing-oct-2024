@@ -1,6 +1,10 @@
 import Recipe from "../models/Recipe.js";
 
-const getAll = () => {
+const getAll = (filter = {}) => {
+    if (filter.search) {
+        return Recipe.where('title').regex(new RegExp(`^${filter.search}`, 'i'));
+    }
+
     return Recipe.find();
 }
 

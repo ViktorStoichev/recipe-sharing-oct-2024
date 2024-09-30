@@ -1,8 +1,10 @@
 <section id="recipe-list">
     <div class="search-bar-container">
         <div class="search-bar">
-            <input type="text" id="search" placeholder="Search recipes...">
-            <button>Search</button>
+            <form action="/recipes/search" method="GET">
+                <input type="text" id="search" name="search" placeholder="Search recipes..." {{#if isSearch}} value="{{filter.search}}" {{/if}}>
+                <input type="submit" value="Search">
+            </form>
         </div>
     </div>
 

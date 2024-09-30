@@ -219,6 +219,22 @@
     padding: 10px;
     border-radius: 10px;
 }
+
+#recipe-list input[type="submit"] {
+    background-color: #ff6347;
+    color: white;
+    max-width: 20%;
+}
+
+#recipe-list input[type="submit"]:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+#recipe-list input[type="submit"]:active {
+    opacity: 0.5;
+    cursor: pointer;
+}
   
   footer {
     text-align: center;
