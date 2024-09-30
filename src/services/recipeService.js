@@ -1,10 +1,14 @@
 import Recipe from "../models/Recipe.js";
 
 const getAll = () => {
-    const recipes = Recipe.find();
-    return recipes;
+    return Recipe.find();
+}
+
+const getOne = (id) => {
+    return Recipe.findById(id);
 }
 
 export const recipeService = {
     getAll,
+    getOne,
 }
