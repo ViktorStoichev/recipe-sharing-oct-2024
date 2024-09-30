@@ -23,4 +23,21 @@ router.get('/:recipeId/details', async (req, res) => {
     res.render('details', { recipe });
 });
 
+router.get('/:recipeId/edit', async (req, res) => {
+    const id = req.params.recipeId;
+
+    const recipe = await recipeService.getOne(id).lean();
+
+    res.render('edit', { recipe });
+});
+
+router.post('/:recipeId/edit', async (req, res) => {
+    const id = req.params.recipeId;
+    const receivedData = req.body;
+
+    await recipeService.edit(id, receivedData);
+    
+    res.redirect('/');
+});
+
 export const recipesController = router;

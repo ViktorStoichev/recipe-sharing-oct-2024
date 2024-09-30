@@ -12,8 +12,13 @@ const add = (data) => {
     return Recipe.create(data);
 }
 
+const edit = (id, data) => {
+    return Recipe.findByIdAndUpdate(id, data);
+}
+
 export const recipeService = {
     getAll,
     getOne,
-    add
+    add,
+    edit
 }
