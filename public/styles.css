@@ -146,7 +146,8 @@
 }
 
 #recipe-form input[type="text"],
-#recipe-form textarea {
+#recipe-form textarea,
+#recipe-form input[type="password"] {
     width: 100%; /* Full width */
     padding: 15px; /* Increased padding for better visibility */
     border: 2px solid #ccc; /* Light border */
